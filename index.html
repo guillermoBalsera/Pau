@@ -2,38 +2,25 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Permitir Audio</title>
+    <title>Feliz Cumpleaños</title>
+    <link rel="icon" href="https://i.postimg.cc/tgxTwbvR/present.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Haz clic para permitir la reproducción de audio</h1>
-    <button onclick="solicitarPermiso()">Permitir Audio</button>
+    <button id="playButton" class="btn">Recibir regalo</button>
 
-    <!-- Configuración inicial del audio para cumplir con políticas de reproducción -->
-    <audio id="audio" src="happy.mp3" muted></audio>
+    <div id="card" style="display: none;">
+        <h1 style="text-align: center;">
+            Feliz cumpleaños
+            <br>
+            Paula!!!
+        </h1>
+        <p>Fdo. Oscar y Guille</p>
+        <canvas id="birthday"></canvas>
+    </div>
 
-    <script>
-        function solicitarPermiso() {
-            // Solicitar confirmación explícita del usuario para reproducir el audio
-            if (confirm("¿Deseas permitir la reproducción de audio?")) {
-                var audio = document.getElementById('audio');
-                
-                // Desmutear el audio para la reproducción
-                audio.muted = false;
-
-                // Intentar reproducir el audio
-                audio.play().then(function() {
-                    // Reproducción exitosa, redirigir a otra página
-                    window.location.href = "./fireworks.html";
-                }).catch(function(error) {
-                    // Si no se puede reproducir el audio, mostrar un mensaje de error
-                    alert("Error al intentar reproducir el audio. Asegúrate de que el navegador permita la reproducción automática.");
-                });
-            } else {
-                // Si el usuario no permite la reproducción, mostrar un mensaje o realizar otra acción
-                alert("Debes permitir la reproducción de audio para continuar.");
-            }
-        }
-    </script>
+    <script src="script.js" defer></script>
 </body>
 </html>
