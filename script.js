@@ -157,3 +157,26 @@ document.addEventListener("DOMContentLoaded", function() {
         birthday.update(delta / 1000);
     })();
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const numStars = 200;
+    const starsContainer = document.getElementById('stars');
+
+    for (let i = 0; i < numStars; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        const size = Math.random() * 2 + 0.5; // Tamaño de las estrellas más pequeñas
+        const x = Math.random() * 100; // Posición horizontal
+        const y = Math.random() * 100; // Posición vertical
+        const delay = Math.random() * 5; // Tiempo de retardo para el parpadeo
+
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.top = `${y}vh`;
+        star.style.left = `${x}vw`;
+        star.style.animationDelay = `${delay}s`;
+
+        starsContainer.appendChild(star);
+    }
+});

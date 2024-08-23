@@ -21,6 +21,7 @@ h1 {
     font-weight: 800;
     -webkit-user-select: none;
     user-select: none;
+    z-index: 3;
 }
 
 p {
@@ -32,6 +33,7 @@ p {
     font-family: "Impact,Charcoal,sans-serif";
     -webkit-user-select: none;
     user-select: none;
+    z-index: 3;
 }
 
 .btn {
@@ -41,14 +43,39 @@ p {
     transform: translate(-50%, -50%);
     padding: 20px;
     background-color: #F7B801;
-    border: 2px solid #F7B801;
+    border: 0.1em solid #F7B801;
     color: #F4F5F7;
     border-radius: 20px;
     font-size: 7vw;
+    z-index: 3;
 }
 
 .btn:hover {
     color: #F7B801;
     background-color: #F4F5F7;
-    border: 2px solid #F7B801;
+}
+
+#stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    opacity: 0;
+    animation: blink 5s infinite; /* Ajusta el tiempo para que el parpadeo sea menos frecuente */
+}
+
+@keyframes blink {
+    0% { opacity: 0.2; } /* Baja opacidad por defecto */
+    50% { opacity: 1; } /* Alta opacidad al parpadear */
+    100% { opacity: 0.2; } /* Baja opacidad al final del ciclo */
 }
