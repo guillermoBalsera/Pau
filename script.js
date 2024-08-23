@@ -1,7 +1,8 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const playButton = document.getElementById('playButton');
     playButton.addEventListener('click', () => {
         const audio = new Audio('happy.mp3');
+        audio.loop = true;
         audio.play().then(() => {
             console.log('El audio se está reproduciendo');
             const card = document.getElementById('card');
