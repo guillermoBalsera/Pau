@@ -35,10 +35,6 @@ p {
     z-index: 3;
 }
 
-#card {
-    transition: all .5s;
-}
-
 .wrapper {
     position: absolute;
     top: 50%;
