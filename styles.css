@@ -4,6 +4,9 @@ body {
     cursor: crosshair;
     color: #F4F5F7;
     text-align: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 canvas {
@@ -25,7 +28,7 @@ h1 {
 
 p {
     position: absolute;
-    top: 80%;
+    top: 95%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #F4F6F7;
